@@ -5,7 +5,7 @@ namespace Blackjack.Events.PlayerEventArgs
 {
     internal class PlayerEventArgs : EventArgs
     {
-        public IPlayer Player { get; private set; }
+        public IPlayer Player { get; }
         public PlayerEventArgs(IPlayer player)
         {
             Player = player;
