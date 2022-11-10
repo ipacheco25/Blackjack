@@ -20,11 +20,6 @@ namespace Blackjack.Interfaces
         ESuits Suit { get; }
 
         /// <summary>
-        /// The color of the card
-        /// </summary>
-        EColors Color { get; }
-
-        /// <summary>
         /// Set the value of the card to either 1 or 11 if the card is an Ace
         /// </summary>
         /// <param name="isOne">Should be set to one</param>

@@ -9,17 +9,11 @@ namespace Blackjack.Models
         public int Value { get; private set; }
         public ERanks Rank { get; private set; }
         public ESuits Suit { get; private set; }
-        public EColors Color { get; private set; }
 
         public Card(ERanks rank, ESuits suit)
         {
             Rank = rank;
             Suit = suit;
-
-            if (suit == ESuits.Spade || suit == ESuits.Club)
-                Color = EColors.Black;
-            else
-                Color = EColors.Red;
 
             if(rank == ERanks.Ace)
             {
