@@ -1,4 +1,5 @@
-﻿using Blackjack.Events.GameEventArgs;
+﻿using Blackjack.Enums;
+using Blackjack.Events.GameEventArgs;
 using Blackjack.Events.PlayerEventArgs;
 using Blackjack.Interfaces;
 using System;
@@ -24,17 +25,17 @@ namespace Blackjack.Models
 
         private void Dealer_Busted(object sender, PlayerBustedEventArgs e)
         {
-            OnGameEnded(won: true);
+            OnGameEnded(results: EGameResults.Won);
         }
 
         private void Player_Busted(object sender, PlayerBustedEventArgs e)
         {
-            OnGameEnded(won: false);
+            OnGameEnded(results: EGameResults.Loss);
         }
 
-        private void OnGameEnded(bool? won)
+        private void OnGameEnded(EGameResults results)
         {
-            GameEnded?.Invoke(this, new GameEndedEventArgs(this, won));
+            GameEnded?.Invoke(this, new GameEndedEventArgs(this, results));
         }
     }
 }
