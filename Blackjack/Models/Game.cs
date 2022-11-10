@@ -20,8 +20,34 @@ namespace Blackjack.Models
             Dealer = new Dealer();
             Player.PlayerBusted += Player_Busted;
             Dealer.PlayerBusted += Dealer_Busted;
+            Player.PlayerStood += Player_Stood;
+            Dealer.PlayerStood += Dealer_Stood;
 
             Dealer.DealCardsTo(Player);
+        }
+
+        private void Dealer_Stood(object sender, PlayerStoodEventArgs e)
+        {
+            if (Player.Value > Dealer.Value)
+                OnGameEnded(results: EGameResults.Won);
+            else if (Player.Value < Dealer.Value)
+                OnGameEnded(results: EGameResults.Loss);
+            else
+                OnGameEnded(EGameResults.Tie);
+        }
+
+        private void Player_Stood(object sender, PlayerStoodEventArgs e)
+        {
+            while (!Dealer.HasBusted && Dealer.Value < Dealer.HitCeiling)
+            {
+                Dealer.Hit();
+            }
+
+            if (Dealer.HasBusted)
+                return;
+
+            Dealer.Stand();
+            
         }
 
         public event EventHandler<GameEndedEventArgs> GameEnded;
