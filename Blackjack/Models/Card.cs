@@ -27,14 +27,5 @@ namespace Blackjack.Models
                 Value = (int)rank + 1;
             }
         }
-
-        public bool SetValueOfAce(bool isOne)
-        {
-            if (Rank != ERanks.Ace)
-                return false;
-
-            Value = isOne ? 1 : 11;
-            return true;
-        }
     }
 }
