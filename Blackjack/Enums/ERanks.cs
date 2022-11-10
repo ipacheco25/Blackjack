@@ -9,7 +9,6 @@ namespace Blackjack.Enums
     public enum ERanks
     {
         Ace,
-        One,
         Two,
         Three,
         Four,

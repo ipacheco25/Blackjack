@@ -24,7 +24,7 @@ namespace Blackjack.Models
             }
             else
             {
-                Value = (int)rank;
+                Value = (int)rank + 1;
             }
         }
 
