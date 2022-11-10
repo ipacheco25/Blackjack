@@ -12,6 +12,8 @@ namespace Blackjack.Models
 
         public bool HasStood { get; private set; }
 
+        public bool HasBusted { get; private set; }
+
         public int Value { get; private set; }
 
         public Player()
@@ -32,11 +34,13 @@ namespace Blackjack.Models
 
         private void OnStood()
         {
+            HasStood = true;
             PlayerStood?.Invoke(this, new PlayerStoodEventArgs(this, stood: true));
         }
 
         private void OnBusted()
         {
+            HasBusted = true;
             PlayerBusted?.Invoke(this, new PlayerBustedEventArgs(this, busted: true));
         }
 
@@ -65,7 +69,6 @@ namespace Blackjack.Models
 
         public void Stand()
         {
-            HasStood = true;
             OnStood();
         }
     }
