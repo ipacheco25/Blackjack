@@ -26,17 +26,17 @@ namespace Blackjack.Interfaces
         /// <summary>
         /// Fires after the player hit
         /// </summary>
-        event EventHandler<PlayerHitEventArgs> Hitted;
+        event EventHandler<PlayerHitEventArgs> PlayerHit;
 
         /// <summary>
         /// Fires after the player stands
         /// </summary>
-        event EventHandler<PlayerStoodEventArgs> Stood;
+        event EventHandler<PlayerStoodEventArgs> PlayerStood;
 
         /// <summary>
         /// Fires after the player busts
         /// </summary>
-        event EventHandler<PlayerBustedEventArgs> Busted;
+        event EventHandler<PlayerBustedEventArgs> PlayerBusted;
 
         /// <summary>
         /// Takes a card from the deck

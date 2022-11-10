@@ -21,23 +21,23 @@ namespace Blackjack.Models
             Value = 0;
         }
 
-        public event EventHandler<PlayerHitEventArgs> Hitted;
-        public event EventHandler<PlayerStoodEventArgs> Stood;
-        public event EventHandler<PlayerBustedEventArgs> Busted;
+        public event EventHandler<PlayerHitEventArgs> PlayerHit;
+        public event EventHandler<PlayerStoodEventArgs> PlayerStood;
+        public event EventHandler<PlayerBustedEventArgs> PlayerBusted;
 
         protected void OnHit()
         {
-            Hitted?.Invoke(this, new PlayerHitEventArgs(this, hit: true));
+            PlayerHit?.Invoke(this, new PlayerHitEventArgs(this, hit: true));
         }
 
         private void OnStood()
         {
-            Stood?.Invoke(this, new PlayerStoodEventArgs(this, stood: true));
+            PlayerStood?.Invoke(this, new PlayerStoodEventArgs(this, stood: true));
         }
 
         protected void OnBusted()
         {
-            Busted?.Invoke(this, new PlayerBustedEventArgs(this, busted: true));
+            PlayerBusted?.Invoke(this, new PlayerBustedEventArgs(this, busted: true));
         }
 
         public virtual void Hit()

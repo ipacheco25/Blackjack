@@ -18,8 +18,8 @@ namespace Blackjack.Models
         {
             Player = new Player();
             Dealer = new Dealer();
-            Player.Busted += Player_Busted;
-            Dealer.Busted += Dealer_Busted;
+            Player.PlayerBusted += Player_Busted;
+            Dealer.PlayerBusted += Dealer_Busted;
 
             Dealer.DealCardsTo(Player);
         }
