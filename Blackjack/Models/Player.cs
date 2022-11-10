@@ -78,8 +78,7 @@ namespace Blackjack.Models
 
         private bool CheckIfHandHasBusted()
         {
-            int target = 21;
-            if (Value > target)
+            if (Value > Game.Target)
                 return true;
             else
             {

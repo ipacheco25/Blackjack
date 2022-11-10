@@ -11,6 +11,9 @@ namespace Blackjack.Models
         public Dealer Dealer { get; private set; }
         public Player Player { get; private set; }
 
+        public static readonly int MaxNumberOfAces = 4;
+        public static readonly int Target = 21;
+
         public Game()
         {
             Player = new Player();
