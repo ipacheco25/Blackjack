@@ -25,7 +25,7 @@ namespace Blackjack.Models
         public event EventHandler<PlayerStoodEventArgs> PlayerStood;
         public event EventHandler<PlayerBustedEventArgs> PlayerBusted;
 
-        protected void OnHit()
+        private void OnHit()
         {
             PlayerHit?.Invoke(this, new PlayerHitEventArgs(this, hit: true));
         }
@@ -35,7 +35,7 @@ namespace Blackjack.Models
             PlayerStood?.Invoke(this, new PlayerStoodEventArgs(this, stood: true));
         }
 
-        protected void OnBusted()
+        private void OnBusted()
         {
             PlayerBusted?.Invoke(this, new PlayerBustedEventArgs(this, busted: true));
         }
