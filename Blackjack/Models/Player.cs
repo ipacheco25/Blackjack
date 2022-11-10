@@ -10,8 +10,6 @@ namespace Blackjack.Models
     {
         public List<Card> Hand { get; private set; }
 
-        public int NumberOfAcesInHand { get; private set; }
-
         public bool HasStood { get; private set; }
 
         public int Value { get; private set; }
@@ -20,7 +18,6 @@ namespace Blackjack.Models
         {
             Hand = new List<Card>();
             HasStood = false;
-            NumberOfAcesInHand = 0;
             Value = 0;
         }
 
@@ -50,18 +47,19 @@ namespace Blackjack.Models
             if (cardWasTaken)
             {
                 Hand.Add(card);
-                OnHit();
-                if (card.Rank != ERanks.Ace)
+                Value += card.Value;
+                if(Value > Game.Target)
                 {
-                    Value += card.Value;
-                    CheckIfHandHasBusted();
+                    Value -= 10;
                 }
-                else
+
+                if(Value > Game.Target)
                 {
-                    NumberOfAcesInHand += 1;
-                    CheckIfHandHasBusted();
+                    OnBusted();
+                    return;
                 }
-                
+
+                OnHit();           
             }
         }
 
@@ -69,21 +67,6 @@ namespace Blackjack.Models
         {
             HasStood = true;
             OnStood();
-        }
-
-        public void CalculatBestHand()
-        {
-            //Logic to determine best hand goes here
-        }
-
-        private bool CheckIfHandHasBusted()
-        {
-            if (Value > Game.Target)
-                return true;
-            else
-            {
-                return false;
-            }
         }
     }
 }

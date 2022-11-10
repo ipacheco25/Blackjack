@@ -14,12 +14,7 @@ namespace Blackjack.Interfaces
         List<Card> Hand { get; }
 
         /// <summary>
-        /// The number of aces contained in the players hand
-        /// </summary>
-        int NumberOfAcesInHand { get; }
-
-        /// <summary>
-        /// The total value of the players hand without Aces 
+        /// The total value of the players hand
         /// </summary>
         int Value { get; }
 
@@ -52,10 +47,5 @@ namespace Blackjack.Interfaces
         /// Stops taking cards
         /// </summary>
         void Stand();
-
-        /// <summary>
-        /// Determines the best hand
-        /// </summary>
-        void CalculatBestHand();
     }
 }
