@@ -4,9 +4,11 @@ namespace Blackjack.Models
 {
     internal class Dealer : Player, IDealer
     {
+        public int HitCeiling { get; }
+
         public Dealer()
         {
-
+            HitCeiling = 16;
         }
 
         public void DealCardsTo(Player player)
