@@ -20,6 +20,8 @@ namespace Blackjack.Models
             Dealer.DealCardsTo(Player);
         }
 
+        public event EventHandler<GameEndedEventArgs> GameEnded;
+
         private void Dealer_Busted(object sender, PlayerBustedEventArgs e)
         {
             OnGameEnded(won: true);
@@ -29,8 +31,6 @@ namespace Blackjack.Models
         {
             OnGameEnded(won: false);
         }
-
-        public event EventHandler<GameEndedEventArgs> GameEnded;
 
         private void OnGameEnded(bool? won)
         {
