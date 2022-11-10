@@ -12,8 +12,9 @@ namespace Blackjack.Models
 
         private static Deck _instance;
 
-        public Stack<Card> Cards { get; private set; }
-
+        /// <summary>
+        /// Singleton instance of the deck
+        /// </summary>
         public static Deck Instance
         {
             get
@@ -27,16 +28,12 @@ namespace Blackjack.Models
             }
         }
 
+        /// <summary>
+        /// The cards in the deck
+        /// </summary>
+        private Stack<Card> Cards { get; set; }
+
         private Deck()
-        {
-            List<Card> cards = Initialize();
-            Shuffle(cards);
-            Cards = new Stack<Card>(cards);
-        }
-
-        public event EventHandler<DeckEmptyEventArgs> DeckEmpty;
-
-        private static List<Card> Initialize()
         {
             List<Card> cards = new List<Card>();
             var suits = Enum.GetValues(typeof(ESuits)).Cast<ESuits>();
@@ -49,10 +46,26 @@ namespace Blackjack.Models
                     cards.Add(card);
                 }
             }
-            return cards;
+
+            Shuffle(cards);
+            Cards = new Stack<Card>(cards);
         }
 
-        public void Shuffle(List<Card> cards)
+        public event EventHandler<DeckEmptyEventArgs> DeckEmpty;
+
+        /// <summary>
+        /// Raise the <see cref="DeckEmpty"/> event
+        /// </summary>
+        private void OnDeckEmpty()
+        {
+            DeckEmpty?.Invoke(this, new DeckEmptyEventArgs(this));
+        }
+
+        /// <summary>
+        /// Shuffles the cards
+        /// </summary>
+        /// <param name="cards">The cards to shuffle</param>
+        private void Shuffle(List<Card> cards)
         {
             Random random = new Random();
             int n = cards.Count;
@@ -64,11 +77,6 @@ namespace Blackjack.Models
                 cards[randomNumber] = cards[n];
                 cards[n] = card;
             }
-        }
-
-        private void OnDeckEmpty()
-        {
-            DeckEmpty?.Invoke(this, new DeckEmptyEventArgs(this));
         }
 
         public bool TryTakeCard(out Card card)
