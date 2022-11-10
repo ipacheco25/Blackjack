@@ -31,10 +31,5 @@ namespace Blackjack.Models
             } while (i < cardToDealPerPlayer);
             
         }
-
-        public override void Hit()
-        {
-            //Dealer logic for hitting goes here
-        }
     }
 }

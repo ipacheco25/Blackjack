@@ -40,7 +40,7 @@ namespace Blackjack.Models
             PlayerBusted?.Invoke(this, new PlayerBustedEventArgs(this, busted: true));
         }
 
-        public virtual void Hit()
+        public void Hit()
         {
             Card card;
             bool cardWasTaken = Deck.Instance.TryTakeCard(out card);
