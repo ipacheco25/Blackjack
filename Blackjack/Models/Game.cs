@@ -2,34 +2,41 @@
 using Blackjack.Events.GameEventArgs;
 using Blackjack.Events.PlayerEventArgs;
 using Blackjack.Interfaces;
+using Blackjack.ViewModels;
 using System;
 
 namespace Blackjack.Models
 {
     internal class Game : IGame
     {
-        public Dealer Dealer { get; private set; }
-        public Player Player { get; private set; }
+        public PlayerViewModel Dealer { get; private set; }
+        public PlayerViewModel Player { get; private set; }
 
         public static readonly int Target = 21;
+        private Player _player;
+        private Dealer _dealer;
 
         public Game()
         {
-            Player = new Player();
-            Dealer = new Dealer();
-            Player.PlayerBusted += Player_Busted;
-            Dealer.PlayerBusted += Dealer_Busted;
-            Player.PlayerStood += Player_Stood;
-            Dealer.PlayerStood += Dealer_Stood;
+            _player = new Player();
+            _dealer = new Dealer();
 
-            Dealer.DealCardsTo(Player);
+            _player.PlayerBusted += Player_Busted;
+            _dealer.PlayerBusted += Dealer_Busted;
+            _player.PlayerStood += Player_Stood;
+            _dealer.PlayerStood += Dealer_Stood;
+
+            _dealer.DealCardsTo(_player);
+
+            Dealer = new PlayerViewModel(_dealer);
+            Player = new PlayerViewModel(_player);
         }
 
         private void Dealer_Stood(object sender, PlayerStoodEventArgs e)
         {
-            if (Player.Value > Dealer.Value)
+            if (_player.Value > _dealer.Value)
                 OnGameEnded(results: EGameResults.Won);
-            else if (Player.Value < Dealer.Value)
+            else if (_player.Value < _dealer.Value)
                 OnGameEnded(results: EGameResults.Loss);
             else
                 OnGameEnded(EGameResults.Tie);
@@ -37,15 +44,15 @@ namespace Blackjack.Models
 
         private void Player_Stood(object sender, PlayerStoodEventArgs e)
         {
-            while (!Dealer.HasBusted && Dealer.Value < Dealer.HitCeiling)
+            while (!_dealer.HasBusted && _dealer.Value < _dealer.HitCeiling)
             {
-                Dealer.Hit();
+                _dealer.Hit();
             }
 
-            if (Dealer.HasBusted)
+            if (_dealer.HasBusted)
                 return;
 
-            Dealer.Stand();
+            _dealer.Stand();
             
         }
 
