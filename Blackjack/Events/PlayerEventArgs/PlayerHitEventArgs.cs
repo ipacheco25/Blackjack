@@ -1,13 +1,16 @@
 ﻿using Blackjack.Interfaces;
+using Blackjack.Models;
 
 namespace Blackjack.Events.PlayerEventArgs
 {
-    internal class PlayerHitEventArgs : PlayerEventArgs
+    public class PlayerHitEventArgs : PlayerEventArgs
     {
-        public bool Hit { get; }
-        public PlayerHitEventArgs(IPlayer player, bool hit) : base(player)
+        public Card Card { get; }
+        public int Index { get; }
+        public PlayerHitEventArgs(IPlayer player, Card card, int index) : base(player)
         {
-            Hit = hit;
+            Card = card;
+            Index = index;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Windows.Documents;
 
 namespace Blackjack.Interfaces
 {
-    internal interface IPlayer
+    public interface IPlayer
     {
         /// <summary>
         /// The cards in the players hand
@@ -17,6 +17,11 @@ namespace Blackjack.Interfaces
         /// The total value of the players hand
         /// </summary>
         int Value { get; }
+
+        /// <summary>
+        /// The player has busted
+        /// </summary>
+        bool HasBusted { get; }
 
         /// <summary>
         /// The player has stood
