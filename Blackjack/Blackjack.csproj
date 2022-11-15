@@ -64,6 +64,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Enums\EColors.cs" />
+    <Compile Include="Enums\EGameResults.cs" />
     <Compile Include="Enums\ERanks.cs" />
     <Compile Include="Enums\ESuits.cs" />
     <Compile Include="Events\DeckEventArgs\DeckEmptyEventArgs.cs" />
