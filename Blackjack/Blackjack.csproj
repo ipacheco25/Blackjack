@@ -120,5 +120,76 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cards\Clubs\Ten.png" />
+    <Resource Include="Images\Cards\Clubs\Two.png" />
+    <Resource Include="Images\Cards\Clubs\Three.png" />
+    <Resource Include="Images\Cards\Clubs\Four.png" />
+    <Resource Include="Images\Cards\Clubs\Five.png" />
+    <Resource Include="Images\Cards\Clubs\Six.png" />
+    <Resource Include="Images\Cards\Clubs\Seven.png" />
+    <Resource Include="Images\Cards\Clubs\Eight.png" />
+    <Resource Include="Images\Cards\Clubs\Nine.png" />
+    <Resource Include="Images\Cards\Clubs\Ace.png" />
+    <Resource Include="Images\Cards\Clubs\Jack.png" />
+    <Resource Include="Images\Cards\Clubs\King.png" />
+    <Resource Include="Images\Cards\Clubs\Queen.png" />
+    <Resource Include="Images\Cards\Clubs\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cards\Diamonds\Ten.png" />
+    <Resource Include="Images\Cards\Diamonds\Two.png" />
+    <Resource Include="Images\Cards\Diamonds\Three.png" />
+    <Resource Include="Images\Cards\Diamonds\Four.png" />
+    <Resource Include="Images\Cards\Diamonds\Five.png" />
+    <Resource Include="Images\Cards\Diamonds\Six.png" />
+    <Resource Include="Images\Cards\Diamonds\Seven.png" />
+    <Resource Include="Images\Cards\Diamonds\Eight.png" />
+    <Resource Include="Images\Cards\Diamonds\Nine.png" />
+    <Resource Include="Images\Cards\Diamonds\Ace.png" />
+    <Resource Include="Images\Cards\Diamonds\Jack.png" />
+    <Resource Include="Images\Cards\Diamonds\King.png" />
+    <Resource Include="Images\Cards\Diamonds\Queen.png" />
+    <Resource Include="Images\Cards\Diamonds\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cards\Hearts\Ten.png" />
+    <Resource Include="Images\Cards\Hearts\Two.png" />
+    <Resource Include="Images\Cards\Hearts\Three.png" />
+    <Resource Include="Images\Cards\Hearts\Four.png" />
+    <Resource Include="Images\Cards\Hearts\Five.png" />
+    <Resource Include="Images\Cards\Hearts\Six.png" />
+    <Resource Include="Images\Cards\Hearts\Seven.png" />
+    <Resource Include="Images\Cards\Hearts\Eight.png" />
+    <Resource Include="Images\Cards\Hearts\Nine.png" />
+    <Resource Include="Images\Cards\Hearts\Ace.png" />
+    <Resource Include="Images\Cards\Hearts\Jack.png" />
+    <Resource Include="Images\Cards\Hearts\King.png" />
+    <Resource Include="Images\Cards\Hearts\Queen.png" />
+    <Resource Include="Images\Cards\Hearts\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cards\Spades\Ten.png" />
+    <Resource Include="Images\Cards\Spades\Two.png" />
+    <Resource Include="Images\Cards\Spades\Three.png" />
+    <Resource Include="Images\Cards\Spades\Four.png" />
+    <Resource Include="Images\Cards\Spades\Five.png" />
+    <Resource Include="Images\Cards\Spades\Six.png" />
+    <Resource Include="Images\Cards\Spades\Seven.png" />
+    <Resource Include="Images\Cards\Spades\Eight.png" />
+    <Resource Include="Images\Cards\Spades\Nine.png" />
+    <Resource Include="Images\Cards\Spades\Ace.png" />
+    <Resource Include="Images\Cards\Spades\Jack.png" />
+    <Resource Include="Images\Cards\Spades\King.png" />
+    <Resource Include="Images\Cards\Spades\Queen.png" />
+    <Resource Include="Images\Cards\Spades\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background.png" />
+    <Resource Include="Images\Hit.png" />
+    <Resource Include="Images\Stand.png" />
+    <Resource Include="Images\Dealer.png" />
+    <Resource Include="Images\Table.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
