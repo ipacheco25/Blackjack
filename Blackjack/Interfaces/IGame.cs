@@ -1,5 +1,6 @@
 ﻿using Blackjack.Events.GameEventArgs;
 using Blackjack.Models;
+using Blackjack.ViewModels;
 using System;
 
 namespace Blackjack.Interfaces
@@ -9,12 +10,12 @@ namespace Blackjack.Interfaces
         /// <summary>
         /// The Dealer
         /// </summary>
-        Dealer Dealer { get; }
+        PlayerViewModel Dealer { get; }
 
         /// <summary>
         /// The Player
         /// </summary>
-        Player Player { get; }
+        PlayerViewModel Player { get; }
 
         /// <summary>
         /// Fires when the game has ended
