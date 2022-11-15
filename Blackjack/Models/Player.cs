@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Blackjack.Models
 {
-    internal class Player : IPlayer
+    public class Player : IPlayer
     {
         public List<Card> Hand { get; private set; }
 
@@ -20,6 +20,7 @@ namespace Blackjack.Models
         {
             Hand = new List<Card>();
             HasStood = false;
+            HasBusted = false;
             Value = 0;
         }
 
@@ -27,9 +28,9 @@ namespace Blackjack.Models
         public event EventHandler<PlayerStoodEventArgs> PlayerStood;
         public event EventHandler<PlayerBustedEventArgs> PlayerBusted;
 
-        private void OnHit()
+        private void OnHit(Card card, int index)
         {
-            PlayerHit?.Invoke(this, new PlayerHitEventArgs(this, hit: true));
+            PlayerHit?.Invoke(this, new PlayerHitEventArgs(this, card, index));
         }
 
         private void OnStood()
@@ -63,7 +64,8 @@ namespace Blackjack.Models
                     return;
                 }
 
-                OnHit();           
+                int index = Hand.Count;
+                OnHit(card, index);           
             }
         }
 
