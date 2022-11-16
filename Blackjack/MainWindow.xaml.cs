@@ -26,7 +26,7 @@ namespace Blackjack
             InitializeComponent();
             Game game = new Game();
 
-            DealerHandControl.DataContext = game.Dealer;
+            DealerControl.DataContext = game.Dealer;
             PlayerControl.DataContext = game.Player;
         }
     }
