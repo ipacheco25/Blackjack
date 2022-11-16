@@ -9,7 +9,7 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="{x:Type viewModels:CardViewModel}" >
                     <Grid Margin="5,0" >
-                        <Image Source="{Binding Front}" Width="75" Height="50"/>
+                        <Image Source="{Binding Image}" Width="50" Height="100"/>
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
