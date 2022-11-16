@@ -10,8 +10,10 @@
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
+
         </Grid.RowDefinitions>
-        <local:HandControl Grid.Row="0" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
+
+        <local:HandControl Grid.Row="0" HorizontalContentAlignment="Center" VerticalAlignment="Center" />
 
         <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="BtnHit" Width="100" Height="30" Margin="0,0,5,0" Command="{Binding Hit}">
