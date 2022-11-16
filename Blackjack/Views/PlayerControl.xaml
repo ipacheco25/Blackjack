@@ -12,7 +12,7 @@
             <RowDefinition />
 
         </Grid.RowDefinitions>
-
+        
         <local:HandControl Grid.Row="0" HorizontalContentAlignment="Center" VerticalAlignment="Center" />
 
         <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -27,5 +27,10 @@
                 </Button.Background>
             </Button>
         </WrapPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <Label Content="BEST HAND:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="50,0,0,0" />
+            <TextBlock Text="{Binding Value, FallbackValue='21'}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,0,0" />
+        </StackPanel>
     </Grid>
 </UserControl>
