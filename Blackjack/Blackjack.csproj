@@ -60,6 +60,9 @@
     <Compile Include="ViewModels\CardViewModel.cs" />
     <Compile Include="ViewModels\DealerViewModel.cs" />
     <Compile Include="ViewModels\PlayerViewModel.cs" />
+    <Compile Include="Views\DealerControl.xaml.cs">
+      <DependentUpon>DealerControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HandControl.xaml.cs">
       <DependentUpon>HandControl.xaml</DependentUpon>
     </Compile>
@@ -95,6 +98,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\DealerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HandControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
