@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Blackjack" xmlns:views="clr-namespace:Blackjack.Views" mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/Table.png" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
