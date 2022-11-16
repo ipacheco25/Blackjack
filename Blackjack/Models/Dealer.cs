@@ -17,20 +17,8 @@ namespace Blackjack.Models
             int cardToDealPerPlayer = Game.InitalHandCount;
             do
             {
-                Card card;
-                bool cardWasTaken = Deck.Instance.TryTakeCard(out card);
-                if (cardWasTaken)
-                {
-                    player.Hand.Add(card);
-                    player.Value += card.Value;
-                }
-
-                cardWasTaken = Deck.Instance.TryTakeCard(out card);
-                if (cardWasTaken)
-                {
-                    Hand.Add(card);
-                    Value += card.Value;
-                }
+                player.Hit();
+                Hit();
                 i++;
             } while (i < cardToDealPerPlayer);
             
