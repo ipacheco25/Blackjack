@@ -15,7 +15,6 @@ namespace Blackjack.ViewModels
         public HitCommand Hit { get; private set; }
         public StandCommand Stand { get; private set; }
 
-        private int _numOfCardsInHand;
         public PlayerViewModel(Player player)
         {
             Player = player;
@@ -23,20 +22,18 @@ namespace Blackjack.ViewModels
             Hit = new HitCommand(player);
             Stand = new StandCommand(player);
 
-           _numOfCardsInHand = 0;
             foreach(Card card in player.Hand)
             {
                 var cardViewModel = new CardViewModel(card);
                 Hand.Add(cardViewModel);
-                _numOfCardsInHand++;
             }
 
             Player.PlayerHit += Dealer_PlayerHit;
         }
 
-        private void Dealer_PlayerHit(object sender, PlayerHitEventArgs e)
+        internal virtual void Dealer_PlayerHit(object sender, PlayerHitEventArgs e)
         {
-            if(_numOfCardsInHand < e.Player.Hand.Count)
+            if(e.Card != null)
             {
                 var cardViewModel = new CardViewModel(e.Card);
                 Hand.Add(cardViewModel);
