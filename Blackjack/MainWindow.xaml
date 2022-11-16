@@ -10,8 +10,8 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <views:HandControl x:Name="DealerHandControl" />
-        <views:PlayerControl x:Name="PlayerControl" />
+        <views:HandControl x:Name="DealerHandControl" Grid.Row="0" />
+        <views:PlayerControl x:Name="PlayerControl" Grid.Row="1" />
 
     </Grid>
 </Window>
