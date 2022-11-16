@@ -14,7 +14,7 @@ namespace Blackjack.Models
 
         public bool HasBusted { get; private set; }
 
-        public int Value { get; private set; }
+        public int Value { get; set; }
 
         public Player()
         {
@@ -53,18 +53,16 @@ namespace Blackjack.Models
             {
                 Hand.Add(card);
                 Value += card.Value;
-                if(Value > Game.Target)
+                if(card.Rank == ERanks.Ace && Value > Game.Target)
                 {
                     Value -= 10;
                 }
+                OnHit(card);
 
-                if(Value > Game.Target)
+                if (Value > Game.Target)
                 {
                     OnBusted();
-                    return;
                 }
-
-                OnHit(card);           
             }
         }
 
