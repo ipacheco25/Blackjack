@@ -7,7 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <local:HandControl></local:HandControl>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <local:HandControl Grid.Row="0" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
 
         <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="BtnHit" Content="Hit" Width="100" Margin="5,0" Command="{Binding Hit}"/>
