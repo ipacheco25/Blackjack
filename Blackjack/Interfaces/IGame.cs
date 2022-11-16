@@ -10,7 +10,7 @@ namespace Blackjack.Interfaces
         /// <summary>
         /// The Dealer
         /// </summary>
-        PlayerViewModel Dealer { get; }
+        DealerViewModel Dealer { get; }
 
         /// <summary>
         /// The Player
