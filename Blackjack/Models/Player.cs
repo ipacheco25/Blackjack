@@ -28,9 +28,9 @@ namespace Blackjack.Models
         public event EventHandler<PlayerStoodEventArgs> PlayerStood;
         public event EventHandler<PlayerBustedEventArgs> PlayerBusted;
 
-        private void OnHit(Card card, int index)
+        private void OnHit(Card card)
         {
-            PlayerHit?.Invoke(this, new PlayerHitEventArgs(this, card, index));
+            PlayerHit?.Invoke(this, new PlayerHitEventArgs(this, card));
         }
 
         private void OnStood()
@@ -64,8 +64,7 @@ namespace Blackjack.Models
                     return;
                 }
 
-                int index = Hand.Count;
-                OnHit(card, index);           
+                OnHit(card);           
             }
         }
 

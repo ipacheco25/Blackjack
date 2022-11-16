@@ -6,11 +6,9 @@ namespace Blackjack.Events.PlayerEventArgs
     public class PlayerHitEventArgs : PlayerEventArgs
     {
         public Card Card { get; }
-        public int Index { get; }
-        public PlayerHitEventArgs(IPlayer player, Card card, int index) : base(player)
+        public PlayerHitEventArgs(IPlayer player, Card card) : base(player)
         {
             Card = card;
-            Index = index;
         }
     }
 }
