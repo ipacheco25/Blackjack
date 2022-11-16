@@ -58,6 +58,7 @@
     <Compile Include="Commands\Player\HitCommand.cs" />
     <Compile Include="Commands\Player\StandCommand.cs" />
     <Compile Include="ViewModels\CardViewModel.cs" />
+    <Compile Include="ViewModels\DealerViewModel.cs" />
     <Compile Include="ViewModels\PlayerViewModel.cs" />
     <Compile Include="Views\HandControl.xaml.cs">
       <DependentUpon>HandControl.xaml</DependentUpon>

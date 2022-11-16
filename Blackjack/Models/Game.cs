@@ -9,10 +9,11 @@ namespace Blackjack.Models
 {
     internal class Game : IGame
     {
-        public PlayerViewModel Dealer { get; private set; }
+        public DealerViewModel Dealer { get; private set; }
         public PlayerViewModel Player { get; private set; }
 
         public static readonly int Target = 21;
+        public static readonly int InitalHandCount = 2;
         private Player _player;
         private Dealer _dealer;
 
@@ -28,7 +29,7 @@ namespace Blackjack.Models
 
             _dealer.DealCardsTo(_player);
 
-            Dealer = new PlayerViewModel(_dealer);
+            Dealer = new DealerViewModel(_dealer);
             Player = new PlayerViewModel(_player);
         }
 

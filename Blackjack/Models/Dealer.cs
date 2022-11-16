@@ -2,7 +2,7 @@
 
 namespace Blackjack.Models
 {
-    internal class Dealer : Player, IDealer
+    public class Dealer : Player, IDealer
     {
         public int HitCeiling { get; }
 
@@ -14,7 +14,7 @@ namespace Blackjack.Models
         public void DealCardsTo(Player player)
         {
             int i = 0;
-            int cardToDealPerPlayer = 2;
+            int cardToDealPerPlayer = Game.InitalHandCount;
             do
             {
                 Card card;
