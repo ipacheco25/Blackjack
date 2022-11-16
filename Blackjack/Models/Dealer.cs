@@ -22,12 +22,14 @@ namespace Blackjack.Models
                 if (cardWasTaken)
                 {
                     player.Hand.Add(card);
+                    player.Value += card.Value;
                 }
 
                 cardWasTaken = Deck.Instance.TryTakeCard(out card);
                 if (cardWasTaken)
                 {
                     Hand.Add(card);
+                    Value += card.Value;
                 }
                 i++;
             } while (i < cardToDealPerPlayer);
