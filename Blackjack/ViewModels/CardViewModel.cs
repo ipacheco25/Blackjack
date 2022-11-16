@@ -13,38 +13,23 @@ namespace Blackjack.ViewModels
 {
     public class CardViewModel : INotifyPropertyChanged
     {
-        private BitmapSource _front, _back;
-        public BitmapSource Front
+        private BitmapSource _front, _back, _image;
+        public BitmapSource Image
         {
             get
             {
-                return _front;
+                return _image;
             }
             set
             {
-                if (_front != value)
+                if (_image != value)
                 {
-                    _front = value;
-                    OnPropertyChanged(nameof(Front));
+                    _image = value;
+                    OnPropertyChanged(nameof(Image));
                 }
             }
         }
 
-        public BitmapSource Back
-        {
-            get
-            {
-                return _back;
-            }
-            set
-            {
-                if (_back != value)
-                {
-                    _back = value;
-                    OnPropertyChanged(nameof(Back));
-                }
-            }
-        }
         public Card Card { get; private set; }
 
         public CardViewModel(Card card)
@@ -52,7 +37,7 @@ namespace Blackjack.ViewModels
             Card = card;
 
             string suit = "";
-            switch (card.Suit)
+            switch (Card.Suit)
             {
                 case ESuits.Club:
                     suit = "Clubs";
@@ -69,7 +54,7 @@ namespace Blackjack.ViewModels
             }
 
             string rank = "";
-            switch (card.Rank)
+            switch (Card.Rank)
             {
                 case ERanks.Ace:
                     rank = "Ace";
@@ -112,11 +97,22 @@ namespace Blackjack.ViewModels
                     break;
 
             }
+
             var uriString = $"/Blackjack;component/Images/Cards/{suit}/{rank}.png";
             _front = new BitmapImage(new Uri(uriString, UriKind.Relative));
 
             uriString = $"/Blackjack;component/Images/Cards/{suit}/Back.png";
             _back = new BitmapImage(new Uri(uriString, UriKind.Relative));
+
+            _image = _front;
+        }
+
+        public void ShowBack(bool showBack)
+        {
+            if (showBack)
+                Image = _back;
+            else
+                Image = _front;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
