@@ -1,6 +1,4 @@
-﻿using System.Windows;
-
-namespace Blackjack.Enums
+﻿namespace Blackjack.Enums
 {
     public enum EGameResults
     {

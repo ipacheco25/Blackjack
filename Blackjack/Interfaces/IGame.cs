@@ -1,7 +1,6 @@
 ﻿using Blackjack.Enums;
 using Blackjack.Events.GameEventArgs;
 using Blackjack.Models;
-using Blackjack.ViewModels;
 using System;
 
 namespace Blackjack.Interfaces

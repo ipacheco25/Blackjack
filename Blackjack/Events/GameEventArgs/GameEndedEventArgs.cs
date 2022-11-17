@@ -1,6 +1,5 @@
 ﻿using Blackjack.Enums;
 using Blackjack.Interfaces;
-using Blackjack.Models;
 
 namespace Blackjack.Events.GameEventArgs
 {

@@ -1,7 +1,6 @@
 ﻿using Blackjack.Events.DeckEventArgs;
 using Blackjack.Models;
 using System;
-using System.Collections.Generic;
 
 namespace Blackjack.Interfaces
 {

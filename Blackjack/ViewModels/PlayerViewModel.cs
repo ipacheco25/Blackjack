@@ -1,11 +1,7 @@
 ﻿using Blackjack.Commands.Player;
 using Blackjack.Events.PlayerEventArgs;
-using Blackjack.Interfaces;
 using Blackjack.Models;
-using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace Blackjack.ViewModels
 {

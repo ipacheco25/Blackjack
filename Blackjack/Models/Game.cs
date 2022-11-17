@@ -2,7 +2,6 @@
 using Blackjack.Events.GameEventArgs;
 using Blackjack.Events.PlayerEventArgs;
 using Blackjack.Interfaces;
-using Blackjack.ViewModels;
 using System;
 
 namespace Blackjack.Models

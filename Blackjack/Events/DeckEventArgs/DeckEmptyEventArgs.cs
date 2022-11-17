@@ -1,5 +1,4 @@
 ﻿using Blackjack.Interfaces;
-using Blackjack.Models;
 
 namespace Blackjack.Events.DeckEventArgs
 {
