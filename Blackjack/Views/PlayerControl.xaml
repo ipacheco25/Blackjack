@@ -16,12 +16,12 @@
         <local:HandControl Grid.Row="0" HorizontalContentAlignment="Center" VerticalAlignment="Center" />
 
         <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="BtnHit" Width="100" Height="30" Margin="0,0,5,0" Command="{Binding Hit}">
+            <Button x:Name="BtnHit" Width="69" Height="30" Margin="0,0,5,0" Command="{Binding Hit}">
                 <Button.Background>
                     <ImageBrush ImageSource="/Images/Hit.png"  Stretch="UniformToFill" />
                 </Button.Background>
             </Button>
-            <Button x:Name="BtnStand" Width="100" Height="30" Command="{Binding Stand}">
+            <Button x:Name="BtnStand" Width="69" Height="30" Command="{Binding Stand}">
                 <Button.Background>
                     <ImageBrush ImageSource="/Images/Stand.png" Stretch="UniformToFill" />
                 </Button.Background>
