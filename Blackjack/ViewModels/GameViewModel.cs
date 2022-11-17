@@ -27,7 +27,7 @@ namespace Blackjack.ViewModels
                     OnPropertyChanged(nameof(Results));
                 }
 
-                if (_results != EGameResults.InPlay)
+                if (_results == EGameResults.InPlay)
                     IsVisible = Visibility.Collapsed;
                 else
                     IsVisible = Visibility.Visible;
