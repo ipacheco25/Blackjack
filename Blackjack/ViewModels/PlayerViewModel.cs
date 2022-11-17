@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 
 namespace Blackjack.ViewModels
 {
-    public class PlayerViewModel : INotifyPropertyChanged
+    public class PlayerViewModel : BaseViewModel
     {
         public Player Player { get; private set; }
 
@@ -35,11 +35,6 @@ namespace Blackjack.ViewModels
             }
         }
 
-        private void OnPropertyChanged([CallerMemberName]string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
         public PlayerViewModel(Player player)
         {
             Player = player;
@@ -56,8 +51,6 @@ namespace Blackjack.ViewModels
 
             player.PlayerHit += Dealer_PlayerHit;
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         internal virtual void Dealer_PlayerHit(object sender, PlayerHitEventArgs e)
         {

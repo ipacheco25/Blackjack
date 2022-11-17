@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 
 namespace Blackjack.ViewModels
 {
-    public class CardViewModel : INotifyPropertyChanged
+    public class CardViewModel : BaseViewModel
     {
         private BitmapSource _front, _back, _image;
         public BitmapSource Image
@@ -113,13 +113,6 @@ namespace Blackjack.ViewModels
                 Image = _back;
             else
                 Image = _front;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
