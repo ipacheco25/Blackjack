@@ -9,35 +9,31 @@ namespace Blackjack.Models
 {
     public class Game : IGame
     {
-        public DealerViewModel Dealer { get; private set; }
-        public PlayerViewModel Player { get; private set; }
-
         public static readonly int Target = 21;
         public static readonly int InitalHandCount = 2;
-        private Player _player;
-        private Dealer _dealer;
+        public Player Player { get; private set; }
+        public Dealer Dealer { get; private set; }
+        public EGameResults Results { get; private set; }
 
         public Game()
         {
-            _player = new Player();
-            _dealer = new Dealer();
+            Player = new Player();
+            Dealer = new Dealer();
+            Results = EGameResults.InPlay;
 
-            _player.PlayerBusted += Player_Busted;
-            _dealer.PlayerBusted += Dealer_Busted;
-            _player.PlayerStood += Player_Stood;
-            _dealer.PlayerStood += Dealer_Stood;
+            Player.PlayerBusted += Player_Busted;
+            Dealer.PlayerBusted += Dealer_Busted;
+            Player.PlayerStood += Player_Stood;
+            Dealer.PlayerStood += Dealer_Stood;
 
-            _dealer.DealCardsTo(_player);
-
-            Dealer = new DealerViewModel(_dealer);
-            Player = new PlayerViewModel(_player);
+            Dealer.DealCardsTo(Player);
         }
 
         private void Dealer_Stood(object sender, PlayerStoodEventArgs e)
         {
-            if (_player.Value > _dealer.Value)
+            if (Player.Value > Dealer.Value)
                 OnGameEnded(results: EGameResults.Won);
-            else if (_player.Value < _dealer.Value)
+            else if (Player.Value < Dealer.Value)
                 OnGameEnded(results: EGameResults.Loss);
             else
                 OnGameEnded(EGameResults.Tie);
@@ -45,18 +41,15 @@ namespace Blackjack.Models
 
         private void Player_Stood(object sender, PlayerStoodEventArgs e)
         {
-            Dealer.ShowBackOfSecondCard(showBack:false);
-
-            while (!_dealer.HasBusted && _dealer.Value < _dealer.HitCeiling)
+            while (!Dealer.HasBusted && Dealer.Value < Dealer.HitCeiling)
             {
-                _dealer.Hit();
+                Dealer.Hit();
             }
 
-            if (_dealer.HasBusted)
+            if (Dealer.HasBusted)
                 return;
 
-            _dealer.Stand();
-            
+            Dealer.Stand();
         }
 
         public event EventHandler<GameEndedEventArgs> GameEnded;
@@ -73,6 +66,7 @@ namespace Blackjack.Models
 
         private void OnGameEnded(EGameResults results)
         {
+            Results = results;
             GameEnded?.Invoke(this, new GameEndedEventArgs(this, results));
         }
     }
