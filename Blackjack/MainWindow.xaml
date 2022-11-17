@@ -12,9 +12,11 @@
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <views:DealerControl x:Name="DealerControl" Grid.Row="0" />
-        <views:PlayerControl x:Name="PlayerControl" Grid.Row="1" />
+        <views:GameResultsControl x:Name="ResultsControl" Grid.Row="1"/>
+        <views:PlayerControl x:Name="PlayerControl" Grid.Row="2" />
 
     </Grid>
 </Window>
