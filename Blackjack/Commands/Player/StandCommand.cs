@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Blackjack.Commands.Player
 {
-    public class StandCommand
+    public class StandCommand : ICommand
     {
         private IPlayer _player;
 
