@@ -63,6 +63,9 @@
     <Compile Include="Views\DealerControl.xaml.cs">
       <DependentUpon>DealerControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GameResultsControl.xaml.cs">
+      <DependentUpon>GameResultsControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HandControl.xaml.cs">
       <DependentUpon>HandControl.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\DealerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GameResultsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
