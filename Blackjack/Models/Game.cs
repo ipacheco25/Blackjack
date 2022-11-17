@@ -45,6 +45,7 @@ namespace Blackjack.Models
 
         private void Player_Stood(object sender, PlayerStoodEventArgs e)
         {
+            Dealer.Hand[Game.InitalHandCount -1].ShowBack(false);
             while (!_dealer.HasBusted && _dealer.Value < _dealer.HitCeiling)
             {
                 _dealer.Hit();
