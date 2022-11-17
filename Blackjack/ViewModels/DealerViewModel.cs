@@ -12,10 +12,17 @@ namespace Blackjack.ViewModels
     {
         public Dealer Dealer { get; private set; }
 
-        public DealerViewModel(Dealer dealer) : base(dealer)
+        public DealerViewModel(Dealer dealer, Player player) : base(dealer)
         {
             Dealer = dealer;
             ShowBackOfSecondCard(showBack: true);
+
+            player.PlayerStood += Player_PlayerStood;
+        }
+
+        private void Player_PlayerStood(object sender, PlayerStoodEventArgs e)
+        {
+            ShowBackOfSecondCard(showBack:false);
         }
 
         public void ShowBackOfSecondCard(bool showBack = true)
