@@ -17,6 +17,12 @@ namespace Blackjack.Commands.Player
             _player = player;
 
             _player.PlayerStood += _player_PlayerStood;
+            _player.PlayerBusted += _player_PlayerBusted;
+        }
+
+        private void _player_PlayerBusted(object sender, Events.PlayerEventArgs.PlayerBustedEventArgs e)
+        {
+            OnCanExecuteChanged();
         }
 
         private void _player_PlayerStood(object sender, Events.PlayerEventArgs.PlayerStoodEventArgs e)
