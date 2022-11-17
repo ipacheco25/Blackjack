@@ -7,6 +7,24 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="TbGameResults" Text="{Binding Results, FallbackValue='Unknown'}" Foreground="White" HorizontalAlignment="Center"/>
+            <Button x:Name="BtnClose" Command="{Binding Close}" Content="Close" Foreground="White" Width="69" Height="30" Margin="0,5,0,0" HorizontalAlignment="Center">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="Gold" Offset="0.0" />
+                        <GradientStop Color="DarkGoldenrod" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
     </Grid>
 </UserControl>
