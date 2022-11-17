@@ -1,6 +1,6 @@
 ﻿namespace Blackjack.Enums
 {
-    public enum EGameResults
+    public enum EResults
     {
         InPlay,
         Loss,

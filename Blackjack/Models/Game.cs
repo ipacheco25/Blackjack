@@ -12,13 +12,13 @@ namespace Blackjack.Models
         public static readonly int InitalHandCount = 2;
         public Player Player { get; private set; }
         public Dealer Dealer { get; private set; }
-        public EGameResults Results { get; private set; }
+        public EResults Results { get; private set; }
 
         public Game()
         {
             Player = new Player();
             Dealer = new Dealer();
-            Results = EGameResults.InPlay;
+            Results = EResults.InPlay;
 
             Player.PlayerBusted += Player_Busted;
             Dealer.PlayerBusted += Dealer_Busted;
@@ -31,11 +31,11 @@ namespace Blackjack.Models
         private void Dealer_Stood(object sender, PlayerStoodEventArgs e)
         {
             if (Player.Value > Dealer.Value)
-                OnGameEnded(results: EGameResults.Won);
+                OnGameEnded(results: EResults.Won);
             else if (Player.Value < Dealer.Value)
-                OnGameEnded(results: EGameResults.Loss);
+                OnGameEnded(results: EResults.Loss);
             else
-                OnGameEnded(EGameResults.Tie);
+                OnGameEnded(EResults.Tie);
         }
 
         private void Player_Stood(object sender, PlayerStoodEventArgs e)
@@ -55,15 +55,15 @@ namespace Blackjack.Models
 
         private void Dealer_Busted(object sender, PlayerBustedEventArgs e)
         {
-            OnGameEnded(results: EGameResults.Won);
+            OnGameEnded(results: EResults.Won);
         }
 
         private void Player_Busted(object sender, PlayerBustedEventArgs e)
         {
-            OnGameEnded(results: EGameResults.Loss);
+            OnGameEnded(results: EResults.Loss);
         }
 
-        private void OnGameEnded(EGameResults results)
+        private void OnGameEnded(EResults results)
         {
             Results = results;
             GameEnded?.Invoke(this, new GameEndedEventArgs(this, results));

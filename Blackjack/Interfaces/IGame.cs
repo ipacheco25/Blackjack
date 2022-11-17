@@ -20,7 +20,7 @@ namespace Blackjack.Interfaces
         /// <summary>
         /// Results of the game
         /// </summary>
-        EGameResults Results { get; }
+        EResults Results { get; }
 
         /// <summary>
         /// Fires when the game has ended

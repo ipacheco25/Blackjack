@@ -7,8 +7,8 @@ namespace Blackjack.ViewModels
 {
     public class GameViewModel : BaseViewModel
     {
-        private EGameResults _results;
-        public EGameResults Results
+        private EResults _results;
+        public EResults Results
         {
             get
             {
@@ -22,7 +22,7 @@ namespace Blackjack.ViewModels
                     OnPropertyChanged(nameof(Results));
                 }
 
-                if (_results == EGameResults.InPlay)
+                if (_results == EResults.InPlay)
                     IsVisible = Visibility.Collapsed;
                 else
                     IsVisible = Visibility.Visible;

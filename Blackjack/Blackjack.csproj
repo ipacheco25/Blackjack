@@ -84,7 +84,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Enums\EColors.cs" />
-    <Compile Include="Enums\EGameResults.cs" />
+    <Compile Include="Enums\EResults.cs" />
     <Compile Include="Enums\ERanks.cs" />
     <Compile Include="Enums\ESuits.cs" />
     <Compile Include="Events\DeckEventArgs\DeckEmptyEventArgs.cs" />
@@ -218,10 +218,6 @@
     <Resource Include="Images\Cards\Spades\Back.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Background.png" />
-    <Resource Include="Images\Hit.png" />
-    <Resource Include="Images\Stand.png" />
-    <Resource Include="Images\Dealer.png" />
     <Resource Include="Images\Table.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

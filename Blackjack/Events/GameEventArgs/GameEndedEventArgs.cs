@@ -5,8 +5,8 @@ namespace Blackjack.Events.GameEventArgs
 {
     public class GameEndedEventArgs : GameEventArgs
     {
-        public EGameResults Results { get; }
-        public GameEndedEventArgs(IGame game, EGameResults results) : base(game)
+        public EResults Results { get; }
+        public GameEndedEventArgs(IGame game, EResults results) : base(game)
         {
             Results = results;
         }
