@@ -57,8 +57,8 @@ namespace Blackjack.ViewModels
 
         public GameViewModel(Game game)
         {
-            DealerViewModel Dealer = new DealerViewModel(game.Dealer, game.Player);
-            PlayerViewModel Player = new PlayerViewModel(game.Player);
+            Dealer = new DealerViewModel(game.Dealer, game.Player);
+            Player = new PlayerViewModel(game.Player);
             Close = new CloseCommand();
             _results = game.Results;
             _isVisible = Visibility.Collapsed;
