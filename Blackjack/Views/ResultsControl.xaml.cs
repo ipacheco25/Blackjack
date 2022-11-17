@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Blackjack.Views
 {
     /// <summary>
-    /// Interaction logic for GameResultsControl.xaml
+    /// Interaction logic for ResultsControl.xaml
     /// </summary>
-    public partial class GameResultsControl : UserControl
+    public partial class ResultsControl : UserControl
     {
-        public GameResultsControl()
+        public ResultsControl()
         {
             InitializeComponent();
         }

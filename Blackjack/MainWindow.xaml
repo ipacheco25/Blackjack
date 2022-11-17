@@ -15,7 +15,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <views:DealerControl x:Name="DealerControl" Grid.Row="0" />
-        <views:GameResultsControl x:Name="ResultsControl" Grid.Row="1"/>
+        <views:ResultsControl x:Name="ResultsControl" Grid.Row="1"/>
         <views:PlayerControl x:Name="PlayerControl" Grid.Row="2" />
 
     </Grid>
