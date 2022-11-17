@@ -2,10 +2,11 @@
 
 namespace Blackjack.Enums
 {
-    internal enum EGameResults
+    public enum EGameResults
     {
-       Loss,
-       Won,
-       Tie
+        InPlay,
+        Loss,
+        Won,
+        Tie
     }
 }
