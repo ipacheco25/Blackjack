@@ -1,21 +1,27 @@
-﻿using Blackjack.Events.GameEventArgs;
+﻿using Blackjack.Enums;
+using Blackjack.Events.GameEventArgs;
 using Blackjack.Models;
 using Blackjack.ViewModels;
 using System;
 
 namespace Blackjack.Interfaces
 {
-    internal interface IGame
+    public interface IGame
     {
         /// <summary>
         /// The Dealer
         /// </summary>
-        DealerViewModel Dealer { get; }
+        Dealer Dealer { get; }
 
         /// <summary>
         /// The Player
         /// </summary>
-        PlayerViewModel Player { get; }
+        Player Player { get; }
+
+        /// <summary>
+        /// Results of the game
+        /// </summary>
+        EGameResults Results { get; }
 
         /// <summary>
         /// Fires when the game has ended

@@ -4,7 +4,7 @@ using Blackjack.Models;
 
 namespace Blackjack.Events.GameEventArgs
 {
-    internal class GameEndedEventArgs : GameEventArgs
+    public class GameEndedEventArgs : GameEventArgs
     {
         public EGameResults Results { get; }
         public GameEndedEventArgs(IGame game, EGameResults results) : base(game)
