@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\Game\CloseCommand.cs" />
     <Compile Include="Commands\Player\HitCommand.cs" />
     <Compile Include="Commands\Player\StandCommand.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
