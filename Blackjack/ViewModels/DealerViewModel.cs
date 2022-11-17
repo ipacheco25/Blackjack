@@ -15,16 +15,13 @@ namespace Blackjack.ViewModels
         public DealerViewModel(Dealer dealer) : base(dealer)
         {
             Dealer = dealer;
-            HideSecondCard();
+            ShowBackOfSecondCard(showBack: true);
         }
 
-        private void HideSecondCard()
+        public void ShowBackOfSecondCard(bool showBack = true)
         {
-            if(Hand.Count == Game.InitalHandCount)
-            {
-                var cardViewModel = Hand[Hand.Count - 1];
-                cardViewModel.ShowBack(true);
-            }
+            var cardViewModel = Hand[Game.InitalHandCount - 1];
+            cardViewModel.ShowBack(showBack);
         }
 
         internal override void Dealer_PlayerHit(object sender, PlayerHitEventArgs e)
