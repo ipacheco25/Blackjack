@@ -1,4 +1,5 @@
 ﻿using Blackjack.Models;
+using Blackjack.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,9 +26,10 @@ namespace Blackjack
         {
             InitializeComponent();
             Game game = new Game();
-
-            DealerControl.DataContext = game.Dealer;
-            PlayerControl.DataContext = game.Player;
+            GameViewModel gameViewModel = new GameViewModel(game);
+            DealerControl.DataContext = gameViewModel.Dealer;
+            PlayerControl.DataContext = gameViewModel.Player;
+            ResultsControl.DataContext = gameViewModel;
         }
     }
 }
