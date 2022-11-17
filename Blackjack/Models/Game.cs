@@ -7,7 +7,7 @@ using System;
 
 namespace Blackjack.Models
 {
-    internal class Game : IGame
+    public class Game : IGame
     {
         public DealerViewModel Dealer { get; private set; }
         public PlayerViewModel Player { get; private set; }
